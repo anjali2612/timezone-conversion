@@ -1,0 +1,21 @@
+import pytz
+import datetime
+
+japan_tz = pytz.timezone("Asia/Tokyo")
+ny_tz = pytz.timezone("America/New_York")
+paris_tz = pytz.timezone("Europe/paris")
+
+india_tz = pytz.timezone("Asia/Kolkata")
+
+japan_time = datetime.datetime.now(japan_tz)
+ny_time = datetime.datetime.now(ny_tz)
+paris_time = datetime.datetime.now(paris_tz)
+
+india_time_japan = japan_time.astimezone(india_tz)
+india_time_ny = ny_time.astimezone(india_tz)
+india_time_paris = paris_time.astimezone(india_tz)
+print("country\t\t\t time\t\t\tnew time")
+
+print("Japan    : ",japan_time,"  ",india_time_japan)
+print("New York : ",us_time,"  ",india_time_us)
+print("paris    : ",paris_time,"  ",india_time_uk)
